@@ -148,20 +148,22 @@ export const handlers = [
       data = {
         message: '成功',
         code: 1000,
+        random
       }
     } else if( random > 100 && random < 900) {
       data = {
         message: '未知',
-        code: -1000,
+        code: 1001,
+        random
       }
     } else {
       data = {
         message: '失败',
-        code: 1001,
+        code: -1000,
+        random
       }
     }
 
-    data.random = random
     return res(
       ctx.status(200),
       ctx.json(
